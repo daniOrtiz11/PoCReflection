@@ -20,6 +20,10 @@ import com.poc.reflection.entities.FigurePojo;
 import com.poc.reflection.entities.SquarePojo;
 import com.poc.reflection.services.Services;
 
+/**
+ * The Controller class is the main controller to handle all the request allowed 
+ * and provide a response.
+ */
 @RestController
 public class Controller {
 	

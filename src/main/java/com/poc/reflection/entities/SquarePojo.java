@@ -5,6 +5,10 @@
 
 package com.poc.reflection.entities;
 
+/**
+ * The SquarePojo class is using for show a Square with a side and its operations.
+ * Extends general pojo FigurePojo.
+ */
 public class SquarePojo extends FigurePojo{
 
 	private double side;
@@ -23,14 +27,12 @@ public class SquarePojo extends FigurePojo{
 	}
 
 	public double area() {
-		// TODO Auto-generated method stub
 		double area = 0;
 		area = this.side * this.side;
 		return this.roundOperations(area);
 	}
 
 	public double perimeter() {
-		// TODO Auto-generated method stub
 		double perimeter = 0;
 		perimeter = 4 * this.side;
 		return this.roundOperations(perimeter);

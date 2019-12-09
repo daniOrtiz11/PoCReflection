@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import com.poc.reflection.dao.Dao;
 import com.poc.reflection.dao.DaoImpl;
 
+/**
+ * The Services class provide a way to interact with some pojos and functionality.
+ * In this case only have one general method for all the operations from controller.  
+ */
 @Service
 public class Services {
 	
