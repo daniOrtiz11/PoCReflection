@@ -1,6 +1,11 @@
+/**
+ * @author @daniOrtiz11
+ *
+ */
+
 package com.poc.reflection.entities;
 
-public class SquarePojo implements FigurePojo{
+public class SquarePojo extends FigurePojo{
 
 	private double side;
 
@@ -17,16 +22,18 @@ public class SquarePojo implements FigurePojo{
 		this.side = side;
 	}
 
-	@Override
 	public double area() {
 		// TODO Auto-generated method stub
-		return 0;
+		double area = 0;
+		area = this.side * this.side;
+		return this.roundOperations(area);
 	}
 
-	@Override
 	public double perimeter() {
 		// TODO Auto-generated method stub
-		return 0;
+		double perimeter = 0;
+		perimeter = 4 * this.side;
+		return this.roundOperations(perimeter);
 	}
 	
 }

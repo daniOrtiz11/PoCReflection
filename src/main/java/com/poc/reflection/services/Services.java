@@ -1,3 +1,8 @@
+/**
+ * @author @daniOrtiz11
+ *
+ */
+
 package com.poc.reflection.services;
 
 import java.util.List;
@@ -19,7 +24,8 @@ public class Services {
 	public double operation(List<?> figures, String method) {
 		double result = 0;
 		for (Object figure : figures) {
-			result = result + dao.operationByFigure(figure, method);
+			Object currentResult = dao.operationByFigure(figure, method);
+			result = result + (double)currentResult;
 		}
 		return result;
 	}

@@ -1,6 +1,11 @@
+/**
+ * @author @daniOrtiz11
+ *
+ */
+
 package com.poc.reflection.entities;
 
-public class CircumferencePojo implements FigurePojo{
+public class CircumferencePojo extends FigurePojo{
 
 	private double radius;
 
@@ -17,16 +22,18 @@ public class CircumferencePojo implements FigurePojo{
 		this.radius = radius;
 	}
 
-	@Override
 	public double area() {
 		// TODO Auto-generated method stub
-		return 0;
+		double area = 0;
+		area = Math.PI * Math.pow(this.radius, 2);
+		return this.roundOperations(area);
 	}
 
-	@Override
 	public double perimeter() {
 		// TODO Auto-generated method stub
-		return 0;
+		double perimeter = 0;
+		perimeter = 2 * Math.PI * this.radius;
+		return this.roundOperations(perimeter);
 	}
 		
 }
