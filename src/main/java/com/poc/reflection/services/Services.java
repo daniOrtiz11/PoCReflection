@@ -28,7 +28,16 @@ public class Services {
 	public double operation(List<?> figures, String method) {
 		double result = 0;
 		for (Object figure : figures) {
+			//Calling to first reflection method
 			Object currentResult = dao.operationByFigure(figure, method);
+			
+			//Calling to second reflection method
+			//Object currentResult = dao.operationByFigure2(figure, method);
+			
+			//Calling to third reflection method
+			//double dummyArg = 5;
+			//Object currentResult = dao.operationByFigure3(figure, method, dummyArg);
+			
 			result = result + (double)currentResult;
 		}
 		return result;
