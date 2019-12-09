@@ -11,4 +11,5 @@ package com.poc.reflection.dao;
 public interface Dao {
 	public Object operationByFigure(Object figure, String method);
 	public Object operationByFigure2(Object figure, String method);
+	public Object operationByFigure3(Object figure, String method, Object arg);
 }

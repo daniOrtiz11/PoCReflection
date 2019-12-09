@@ -37,5 +37,19 @@ public class CircumferencePojo extends FigurePojo{
 		perimeter = 2 * Math.PI * this.radius;
 		return this.roundOperations(perimeter);
 	}
+	
+	public double areaArgs(double radius) {
+		double area = 0;
+		area = Math.PI * Math.pow(radius, 2);
+		return this.roundOperations(area);
+	}
+	
+	public double perimeterArgs(double radius) {
+		double perimeter = 0;
+		perimeter = 2 * Math.PI * radius;
+		return this.roundOperations(perimeter);
+	}
+	
+	
 		
 }

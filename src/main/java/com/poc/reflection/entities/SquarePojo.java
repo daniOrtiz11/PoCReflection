@@ -38,4 +38,16 @@ public class SquarePojo extends FigurePojo{
 		return this.roundOperations(perimeter);
 	}
 	
+	public double areaArgs(double side) {
+		double area = 0;
+		area = side * side;
+		return this.roundOperations(area);
+	}
+	
+	public double perimeterArgs(double side) {
+		double perimeter = 0;
+		perimeter = 4 * side;
+		return this.roundOperations(perimeter);
+	}
+	
 }

@@ -73,4 +73,39 @@ public class DaoImpl implements Dao{
 		return value;
 	}
 
+	/*
+	 * Third reflection method. 
+	 * It uses reflection similar to the first method but in this case passing arguments 
+	 * to the method.
+	 */
+	@Override
+	public Object operationByFigure3(Object figure, String methodStr, Object arg) {
+		// TODO Auto-generated method stub
+		Object value = 0;
+		try {
+	        Class[] cArg = new Class[1];
+	        cArg[0] = Double.class;
+			Method method = figure.getClass().getMethod(methodStr, cArg);
+			try {
+				value = method.invoke(figure, arg);
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return value;
+	}
+
 }
