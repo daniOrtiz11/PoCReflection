@@ -1,9 +1,15 @@
+/**
+ * @author @daniOrtiz11
+ *
+ */
+
 package com.poc.reflection.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +20,10 @@ import com.poc.reflection.entities.FigurePojo;
 import com.poc.reflection.entities.SquarePojo;
 import com.poc.reflection.services.Services;
 
+/**
+ * The Controller class is the main controller to handle all the request allowed 
+ * and provide a response.
+ */
 @RestController
 public class Controller {
 	
@@ -21,32 +31,30 @@ public class Controller {
 	private Services service;
 	
     @RequestMapping( value = "/area", method=RequestMethod.GET)
-    public double area(@RequestParam int dummyOption) {
+    public ResponseEntity<Object> area(@RequestParam int dummyOption) {
     	double value = 0;
-    	List<Object> inputList = new ArrayList<Object>();
-    	FigurePojo figure = null;
-    	if(dummyOption == 1) {
-    		figure = new SquarePojo(2);
-    	} else if(dummyOption == 2){
-    		figure = new CircumferencePojo(5);
-    	}
-    	inputList.add(figure);
+    	List<Object> inputList = getFigureByDummy(dummyOption);
     	value = this.service.operation(inputList, "area");
-    	return value;
+    	return ResponseEntity.ok(value);
     }
     
     @RequestMapping( value = "/perimeter", method=RequestMethod.GET)
-    public double perimeter(@RequestParam int dummyOption) {
+    public ResponseEntity<Object> perimeter(@RequestParam int dummyOption) {
     	double value = 0;
+    	List<Object> inputList = getFigureByDummy(dummyOption);
+    	value = this.service.operation(inputList, "perimeter");
+    	return ResponseEntity.ok(value);
+    }
+    
+    private List<Object> getFigureByDummy(int option){
     	List<Object> inputList = new ArrayList<Object>();
     	FigurePojo figure = null;
-    	if(dummyOption == 1) {
+    	if(option == 1) {
     		figure = new SquarePojo(2);
-    	} else if(dummyOption == 2){
+    	} else if(option == 2){
     		figure = new CircumferencePojo(5);
     	}
     	inputList.add(figure);
-    	value = this.service.operation(inputList, "perimeter");
-    	return value;
+    	return inputList;
     }
 }
